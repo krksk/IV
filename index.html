@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>짱구야 놀자</title>
+	<style type="text/css">
+		body{perspective: 800px;}
+		#zzanggu{ width: 680px; height: 300px; background: url('zzanggu.jpg'); background-size: cover; margin: auto; margin-top: 200px;
+			position: relative;
+			animation: mymove 5s infinite;
+			animation-duration: 4s;
+			animation-iteration-count: 1;
+			animation-direction: alternate;
+			animation-fill-mode: both;
+			}
+			@keyframes mymove {
+    		0%{transform: rotateY(180deg);}
+    		50%{transform: rotateX(180deg);}
+    		}
+	</style>
+</head>
+<body>
+	<div id="zzanggu"></div>
+	<audio id="testMusic">
+	<source src="bgm1.mp3" type="audio/mpeg">
+	<script type="text/javascript">
+
+		var currentZzanggu = 1;
+
+		zzanggu.onmouseover = function(){
+            zzanggu.style.cursor = "pointer";
+        }
+
+		zzanggu.onclick = function(){
+			if(currentZzanggu == 1){
+				zzanggu.style.background = "url('zzanggu2.gif')";
+				currentZzanggu = 2;
+				testMusic.play();
+			}else if(currentZzanggu == 2){
+				zzanggu.style.background = "url('zzanggu3.gif')";
+				currentZzanggu = 3;
+			}else if(currentZzanggu == 3){
+				zzanggu.style.background = "url('zzanggu1.gif')";
+				currentZzanggu = 1;
+			}
+		}
+	</script>
+</body>
+</html>
